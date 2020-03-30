@@ -1,15 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import  styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+const NavBarHeader=styled.header`
+    padding: 1rem;
+`
+
+const MyLink=styled(Link )`
+    padding: 2rem;
+    
+`
 
 const NavBar = () => {
     return (
-        <header>
-            <Link>About</Link>
-            <Link>Houses</Link>
-            <Link>Professors</Link>
-            <Link>Famous Students</Link>
-            <Link>Courses</Link>
-        </header>
+        <NavBarHeader className='navbar' >  
+            <MyLink className='menuElement'>About</MyLink>
+            <MyLink className='menuElement'>Houses</MyLink>
+            <MyLink className='menuElement'>Professors</MyLink>
+            <MyLink className='menuElement'>Famous Students</MyLink>
+            <MyLink className='menuElement'>Courses</MyLink>
+        </NavBarHeader>
     )
 }
 
