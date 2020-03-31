@@ -36,8 +36,9 @@ const NavContainer = styled.div`
   z-index: 1;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
 `;
+
 const Home = () => {
   return (
     <MainPage>
