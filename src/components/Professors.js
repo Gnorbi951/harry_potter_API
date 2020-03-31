@@ -8,6 +8,7 @@ const Professors = () => {
   const [professors, setProfessors] = useState([]);
 
   useEffect(() => {
+    let professorList = [];
     fetch(
       "https://www.potterapi.com/v1/characters?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO"
     )
@@ -18,9 +19,11 @@ const Professors = () => {
             String(character.role).includes("Professor") &&
             String(character.school).includes("Hogwarts")
           ) {
+            professorList.push(character);
           }
         });
       });
+    setProfessors(professorList);
   }, []);
 
   return <ProfContainer></ProfContainer>;
