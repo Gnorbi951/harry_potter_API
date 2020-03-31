@@ -24,6 +24,8 @@ const Professors = () => {
             String(character.role).includes("Professor") &&
             String(character.school).includes("Hogwarts")
           ) {
+            let course = character.role.split(",");
+            character["course"] = course[1];
             professorList.push(character);
             console.log(character.name);
           }

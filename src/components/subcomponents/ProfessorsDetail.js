@@ -4,13 +4,21 @@ import ProfilePic from "/home/evelin/Codecool/Advanced/potter/src/wizard.png";
 
 const CardBody = styled.div`
   /* margin: 1rem auto; */
-  background-color: #ccc;
+  /* background-color: #ccc; */
   padding: 1rem;
   width: inherit;
 `;
+
+const Name = styled.p`
+  text-align: center;
+  font-weight: bold;
+  background-color: #cf5700;
+  color: white;
+  padding: 1rem;
+`;
 const Card = styled.div`
   color: #404040;
-  /* padding: 1rem; */
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -19,7 +27,7 @@ const Card = styled.div`
 
 const Profile = styled.img`
   margin: 0 auto;
-  min-width: 12rem;
+  min-width: 14rem;
   max-width: 15rem;
 `;
 
@@ -32,6 +40,10 @@ const Cards = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
 
+const Status = styled.span`
+  font-weight: bold;
+`;
+
 const ProfessorsDetail = props => {
   return (
     <Cards>
@@ -39,14 +51,23 @@ const ProfessorsDetail = props => {
         <Card>
           <Profile src={ProfilePic} alt="Wizard profile"></Profile>
           <CardBody>
-            <p>{profData.name}</p>
+            <Name>{profData.name}</Name>
             <p>
               {profData.dumbledoresArmy
                 ? "In dumbledore's army: yes"
                 : "In dumbledore's army: no"}
             </p>
-            <p>Blood status: {profData.bloodStatus}</p>
-            <p>Species: {profData.species}</p>
+            <p>
+              <Status>Blood status:</Status> {profData.bloodStatus}
+            </p>
+            <p>
+              <Status>Species: </Status>
+              {profData.species}
+            </p>
+            <p>
+              <Status>Course: </Status>
+              {profData.course}
+            </p>
           </CardBody>
         </Card>
       ))}

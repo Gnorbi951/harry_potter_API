@@ -23,12 +23,15 @@ const MyLink = styled(Link)`
 const NavBar = () => {
   return (
     <NavBarHeader className="navbar">
+      <MyLink className="menuElement" to={"/"}>
+        Home
+      </MyLink>
       <MyLink className="menuElement">About</MyLink>
       <MyLink className="menuElement">Houses</MyLink>
       <MyLink className="menuElement" to={"/professors"}>
         Professors
       </MyLink>
-      <MyLink className="menuElement">Famous Students</MyLink>
+
       <MyLink className="menuElement">Courses</MyLink>
     </NavBarHeader>
   );
