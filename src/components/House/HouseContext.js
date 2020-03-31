@@ -16,7 +16,7 @@ export const HouseProvider = props => {
   }, [key]);
 
   return (
-    <HouseContext.Provider value={"lol"}>
+    <HouseContext.Provider value={[housesData, setHouses]}>
       {props.children}
     </HouseContext.Provider>
   );

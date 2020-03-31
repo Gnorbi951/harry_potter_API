@@ -7,4 +7,4 @@ const SingleHouse = props => {
   console.log(props);
   return <React.Fragment>kek</React.Fragment>;
 };
-export default House;
+export default SingleHouse;

@@ -29,7 +29,7 @@ const Card = styled.div`
 `;
 
 const HouseList = props => {
-  const data = useContext(HouseContext);
+  const [houses, setHouses] = useContext(HouseContext);
   /* This useEffect will be used the manipulate the data
       in a way that only the necessary components will be passed on
   
@@ -38,27 +38,18 @@ const HouseList = props => {
   }, [housesData]);
   */
 
-  // return (
-  //   <HouseProvider>
-  //     <CardContainer>
-  //       {housesData.map(data => (
-  //         <Link name={data.name} to={`/houses/${data._id}`}>
-  //           <Card id={data.name} key={data.name}>
-  //             <h1>{data.name}</h1>
-  //           </Card>
-  //         </Link>
-  //       ))}
-  //     </CardContainer>
-  //   </HouseProvider>
-  // );
   return (
-    <React.Fragment>
-      <HouseProvider>
-        {console.log(props)}
-
-        {data}
-      </HouseProvider>
-    </React.Fragment>
+    <HouseProvider>
+      <CardContainer>
+        {houses.map(data => (
+          <Link name={data.name} to={`/houses/${data._id}`}>
+            <Card id={data.name} key={data.name}>
+              <h1>{data.name}</h1>
+            </Card>
+          </Link>
+        ))}
+      </CardContainer>
+    </HouseProvider>
   );
 };
 
