@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Background from "../back.jpg";
 import NavBar from "./NavBar";
+import { keyFrameMainPage } from "./subcomponents/KeyFrames";
 
 const MainPage = styled.div`
   background-image: url(${Background});
@@ -23,6 +24,7 @@ const MainButton = styled.button`
   border: none;
   border-radius: 10px;
   color: white;
+  animation: ${keyFrameMainPage} 3s forwards 0s ease;
   &:hover {
     background-color: teal;
     cursor: pointer;
@@ -31,6 +33,7 @@ const MainButton = styled.button`
 
 const MainTitle = styled.h1`
   color: white;
+  animation: ${keyFrameMainPage} 3s forwards 0s ease;
 `;
 const NavContainer = styled.div`
   z-index: 1;
