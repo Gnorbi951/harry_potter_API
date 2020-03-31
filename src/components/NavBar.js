@@ -28,7 +28,9 @@ const NavBar = () => {
   return (
     <NavBarHeader>
       <MyLink className="menuElement">About</MyLink>
-      <MyLink className="menuElement">Houses</MyLink>
+      <MyLink to="/houses" className="menuElement">
+        Houses
+      </MyLink>
       <MyLink className="menuElement">Professors</MyLink>
       <MyLink className="menuElement">Courses</MyLink>
     </NavBarHeader>
