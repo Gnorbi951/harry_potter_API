@@ -19,6 +19,9 @@ export const ProfessorsProvider = props => {
             String(character.role).includes("Professor") &&
             String(character.school).includes("Hogwarts")
           ) {
+            let course = character.role.split(",");
+            character["course"] = course[1];
+            character["image"] = ./images/${character._id}.jpg;
             professorList.push(character);
             console.log(character.name);
           }
