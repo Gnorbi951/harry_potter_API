@@ -30,7 +30,6 @@ const NavBar = () => {
       <MyLink className="menuElement">About</MyLink>
       <MyLink className="menuElement">Houses</MyLink>
       <MyLink className="menuElement">Professors</MyLink>
-      <MyLink className="menuElement">Famous Students</MyLink>
       <MyLink className="menuElement">Courses</MyLink>
     </NavBarHeader>
   );
