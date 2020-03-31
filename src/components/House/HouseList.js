@@ -32,17 +32,15 @@ const HouseList = () => {
 
   return (
     <React.Fragment>
-      <HouseProvider>
-        <CardContainer>
-          {houses.map(data => (
-            <Link key={data.name} to={`/houses/${data._id}`}>
-              <Card id={data.name}>
-                <h1>{data.name}</h1>
-              </Card>
-            </Link>
-          ))}
-        </CardContainer>
-      </HouseProvider>
+      <CardContainer>
+        {houses.map(data => (
+          <Link key={data.name} to={`/houses/${data._id}`}>
+            <Card id={data.name}>
+              <h1>{data.name}</h1>
+            </Card>
+          </Link>
+        ))}
+      </CardContainer>
     </React.Fragment>
   );
 };
