@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
+
+import ProfessorsDetail from "./subcomponents/ProfessorsDetail";
+
 const ProfContainer = styled.div`
   margin: 6rem auto;
 `;
@@ -31,9 +34,7 @@ const Professors = () => {
 
   return (
     <React.Fragment>
-      {professors.map(prof => (
-        <p key={prof.id}>{prof.name}</p>
-      ))}
+      <ProfessorsDetail data={professors} />
     </React.Fragment>
   );
 };
