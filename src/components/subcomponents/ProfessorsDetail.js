@@ -27,8 +27,8 @@ const Card = styled.div`
 
 const Profile = styled.img`
   margin: 0 auto;
-  min-width: 14rem;
-  max-width: 15rem;
+  min-width: 200px;
+  max-height: 300px;
 `;
 
 const Cards = styled.div`
@@ -56,9 +56,8 @@ const ProfessorsDetail = props => {
           <CardBody>
             <Name>{profData.name}</Name>
             <p>
-              {profData.dumbledoresArmy
-                ? "In dumbledore's army: yes"
-                : "In dumbledore's army: no"}
+              <Status>In Dumbledore's army: </Status>
+              {profData.dumbledoresArmy ? "Yes" : "No"}
             </p>
             <p>
               <Status>Blood status:</Status> {profData.bloodStatus}
@@ -69,7 +68,7 @@ const ProfessorsDetail = props => {
             </p>
             <p>
               <Status>Course: </Status>
-              {profData.course}
+              {profData._id}
             </p>
           </CardBody>
         </Card>
