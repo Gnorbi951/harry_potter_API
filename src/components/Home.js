@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Background from "../back.jpg";
+import NavBar from "./NavBar";
 
 const MainPage = styled.div`
   background-image: url(${Background});
   background-position: center;
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,6 +36,7 @@ const MainTitle = styled.h1`
 const Home = () => {
   return (
     <MainPage>
+      <NavBar />
       <MainTitle>Hogwarts School of Witchcraft and Wizardry</MainTitle>
       <MainButton>Check out our Houses</MainButton>
     </MainPage>
