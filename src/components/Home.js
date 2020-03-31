@@ -32,11 +32,18 @@ const MainButton = styled.button`
 const MainTitle = styled.h1`
   color: white;
 `;
-
+const NavContainer = styled.div`
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+`;
 const Home = () => {
   return (
     <MainPage>
-      <NavBar />
+      <NavContainer>
+        <NavBar />
+      </NavContainer>
       <MainTitle>Hogwarts School of Witchcraft and Wizardry</MainTitle>
       <MainButton>Check out our Houses</MainButton>
     </MainPage>

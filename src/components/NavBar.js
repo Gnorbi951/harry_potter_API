@@ -8,10 +8,6 @@ const NavBarHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  width: 100vw;
 `;
 
 const MyLink = styled(Link)`
