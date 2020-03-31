@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar";
+import { HouseProvider } from "./HouseContext";
+import { HouseContext } from "./HouseContext";
+import SingleHouse from "./SingleHouse";
 
 const CardContainer = styled.div`
   background-color: 323232;
@@ -27,18 +28,8 @@ const Card = styled.div`
   background-color: #ff1e56;
 `;
 
-const HouseList = () => {
-  const [key, setKey] = useState(
-    "?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO"
-  );
-  const [housesData, setHouses] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://www.potterapi.com/v1/houses" + key).then(resp => {
-      setHouses(resp.data);
-    });
-  }, [key]);
-
+const HouseList = props => {
+  const data = useContext(HouseContext);
   /* This useEffect will be used the manipulate the data
       in a way that only the necessary components will be passed on
   
@@ -47,17 +38,26 @@ const HouseList = () => {
   }, [housesData]);
   */
 
+  // return (
+  //   <HouseProvider>
+  //     <CardContainer>
+  //       {housesData.map(data => (
+  //         <Link name={data.name} to={`/houses/${data._id}`}>
+  //           <Card id={data.name} key={data.name}>
+  //             <h1>{data.name}</h1>
+  //           </Card>
+  //         </Link>
+  //       ))}
+  //     </CardContainer>
+  //   </HouseProvider>
+  // );
   return (
     <React.Fragment>
-      <CardContainer>
-        {housesData.map(data => (
-          <Link name={data.name} to={`/houses/${data._id}`}>
-            <Card id={data.name} key={data.name}>
-              <h1>{data.name}</h1>
-            </Card>
-          </Link>
-        ))}
-      </CardContainer>
+      <HouseProvider>
+        {console.log(props)}
+
+        {data}
+      </HouseProvider>
     </React.Fragment>
   );
 };
