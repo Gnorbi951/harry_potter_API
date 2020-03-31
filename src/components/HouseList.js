@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 
 const CardContainer = styled.div`
@@ -36,7 +37,7 @@ const HouseList = () => {
     axios.get("https://www.potterapi.com/v1/houses" + key).then(resp => {
       setHouses(resp.data);
     });
-  }, []);
+  }, [key]);
 
   /* This useEffect will be used the manipulate the data
       in a way that only the necessary components will be passed on
@@ -50,9 +51,11 @@ const HouseList = () => {
     <React.Fragment>
       <CardContainer>
         {housesData.map(data => (
-          <Card id={data.name} key={data.name}>
-            <h1>{data.name}</h1>
-          </Card>
+          <Link to={`/houses/${data._id}`}>
+            <Card id={data.name} key={data.name}>
+              <h1>{data.name}</h1>
+            </Card>
+          </Link>
         ))}
       </CardContainer>
     </React.Fragment>
