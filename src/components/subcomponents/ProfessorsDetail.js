@@ -49,7 +49,10 @@ const ProfessorsDetail = props => {
     <Cards>
       {props.data.map(profData => (
         <Card>
-          <Profile src={ProfilePic} alt="Wizard profile"></Profile>
+          <Profile
+            src={require(`${profData.image}`)}
+            alt="Wizard profile"
+          ></Profile>
           <CardBody>
             <Name>{profData.name}</Name>
             <p>
