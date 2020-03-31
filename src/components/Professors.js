@@ -21,7 +21,7 @@ const Professors = () => {
           }
         });
       });
-  }, [professors]);
+  }, []);
 
   return <ProfContainer></ProfContainer>;
 };
