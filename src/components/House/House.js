@@ -4,7 +4,7 @@ import { useState } from "react";
 const House = props => {
   const [id, setId] = useState("");
 
-  setId(props.match.params);
-  return <div>{id}</div>;
+  console.log(props);
+  return <React.Fragment>kek</React.Fragment>;
 };
 export default House;

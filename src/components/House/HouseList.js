@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import NavBar from "./NavBar";
+import NavBar from "../NavBar";
 
 const CardContainer = styled.div`
   background-color: 323232;
@@ -51,7 +51,7 @@ const HouseList = () => {
     <React.Fragment>
       <CardContainer>
         {housesData.map(data => (
-          <Link to={`/houses/${data._id}`}>
+          <Link name={data.name} to={`/houses/${data._id}`}>
             <Card id={data.name} key={data.name}>
               <h1>{data.name}</h1>
             </Card>
