@@ -1,6 +1,10 @@
 import React from "react";
+import { useState } from "react";
 
-const House = () => {
-  return <div></div>;
+const House = props => {
+  const [id, setId] = useState("");
+
+  setId(props.match.params);
+  return <div>{id}</div>;
 };
 export default House;
