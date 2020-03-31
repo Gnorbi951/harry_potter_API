@@ -9,13 +9,14 @@ const HouseList = () => {
   const [housesData, setHouses] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://www.potterapi.com/v1/houses" + key)
-      .then(resp => {
-        setHouses(resp.data);
-      })
-      .then(console.log(housesData));
+    axios.get("https://www.potterapi.com/v1/houses" + key).then(resp => {
+      setHouses(resp.data);
+    });
   }, []);
+
+  useEffect(() => {
+    console.log(housesData);
+  }, [housesData]);
 
   return <div>kek</div>;
 };
