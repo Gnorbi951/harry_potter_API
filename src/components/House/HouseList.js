@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { HouseProvider } from "./HouseContext";
 import { HouseContext } from "./HouseContext";
-import SingleHouse from "./SingleHouse";
 
 const CardContainer = styled.div`
   background-color: 323232;
@@ -28,28 +27,23 @@ const Card = styled.div`
   background-color: #ff1e56;
 `;
 
-const HouseList = props => {
-  const [houses, setHouses] = useContext(HouseContext);
-  /* This useEffect will be used the manipulate the data
-      in a way that only the necessary components will be passed on
-  
-  useEffect(() => {
-    console.log(housesData);
-  }, [housesData]);
-  */
+const HouseList = () => {
+  const [houses] = useContext(HouseContext);
 
   return (
-    <HouseProvider>
-      <CardContainer>
-        {houses.map(data => (
-          <Link name={data.name} to={`/houses/${data._id}`}>
-            <Card id={data.name} key={data.name}>
-              <h1>{data.name}</h1>
-            </Card>
-          </Link>
-        ))}
-      </CardContainer>
-    </HouseProvider>
+    <React.Fragment>
+      <HouseProvider>
+        <CardContainer>
+          {houses.map(data => (
+            <Link key={data.name} to={`/houses/${data._id}`}>
+              <Card id={data.name}>
+                <h1>{data.name}</h1>
+              </Card>
+            </Link>
+          ))}
+        </CardContainer>
+      </HouseProvider>
+    </React.Fragment>
   );
 };
 

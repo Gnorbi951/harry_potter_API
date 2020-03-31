@@ -6,7 +6,6 @@ import SingleHouse from "./components/House/SingleHouse";
 import { HouseProvider } from "./components/House/HouseContext";
 // import NavBar from "./components/NavBar";
 import "./App.css";
-import House from "./components/House/House";
 
 const App = () => {
   return (

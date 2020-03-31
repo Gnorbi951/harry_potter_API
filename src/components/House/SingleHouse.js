@@ -1,10 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
+import { HouseContext } from "./HouseContext";
 
 const SingleHouse = props => {
-  const [id, setId] = useState("");
+  const [houses] = useContext(HouseContext);
 
-  console.log(props);
+  console.log(houses);
   return <React.Fragment>kek</React.Fragment>;
 };
 export default SingleHouse;

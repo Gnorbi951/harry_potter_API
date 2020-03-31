@@ -4,7 +4,7 @@ import axios from "axios";
 export const HouseContext = createContext();
 
 export const HouseProvider = props => {
-  const [key, setKey] = useState(
+  const [key] = useState(
     "?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO"
   );
   const [housesData, setHouses] = useState([]);
