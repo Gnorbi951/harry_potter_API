@@ -28,7 +28,7 @@ const Card = styled.div`
 `;
 
 const HouseList = () => {
-  const [houses] = useContext(HouseContext);
+  const { houses } = useContext(HouseContext);
 
   return (
     <React.Fragment>

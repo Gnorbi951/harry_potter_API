@@ -3,20 +3,22 @@ import axios from "axios";
 
 export const HouseContext = createContext();
 
-export const HouseProvider = props => {
-  const [key] = useState(
-    "?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO"
-  );
-  const [housesData, setHouses] = useState([]);
+const key =
+  "?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO";
 
-  useEffect(() => {
+export const HouseProvider = props => {
+  const [houses, setHouses] = useState([]);
+
+  const fetchAllHouses = () => {
     axios.get("https://www.potterapi.com/v1/houses" + key).then(resp => {
       setHouses(resp.data);
     });
-  }, [key]);
+  };
+
+  useEffect(fetchAllHouses, []);
 
   return (
-    <HouseContext.Provider value={[housesData, setHouses]}>
+    <HouseContext.Provider value={{ houses, fetchAllHouses }}>
       {props.children}
     </HouseContext.Provider>
   );
