@@ -68,7 +68,7 @@ const ProfessorsDetail = props => {
             </p>
             <p>
               <Status>Course: </Status>
-              {profData._id}
+              {profData.course}
             </p>
           </CardBody>
         </Card>

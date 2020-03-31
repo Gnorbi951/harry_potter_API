@@ -26,9 +26,8 @@ const Professors = () => {
           ) {
             let course = character.role.split(",");
             character["course"] = course[1];
-            professorList.push(character);
             character["image"] = `./images/${character._id}.jpg`;
-            console.log(character.name);
+            professorList.push(character);
           }
         });
         setProfessors(professorList);
