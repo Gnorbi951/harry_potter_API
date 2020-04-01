@@ -3,6 +3,7 @@ import { ProfessorsContext } from "../context/ProfessorsContext";
 import ProfessorsDetail from "./subcomponents/ProfessorsDetail";
 import Background from "../profback.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { keyFrameMainPage } from "./subcomponents/KeyFrames";
 
 import "../App.css";
 
@@ -10,7 +11,7 @@ import styled from "styled-components";
 
 const ProfHeader = styled.div`
   background-image: url(${Background});
-  background-position: center;
+  background-position: bottom;
   width: 100%;
   height: 100vh;
 
@@ -23,17 +24,31 @@ const ProfHeader = styled.div`
   margin: 0;
 `;
 const ProfText = styled.div`
-  color: white;
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  color: #b9b384;
+  text-align: center;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3rem;
+  border-radius: 20px;
+  font-size: 18px;
+  animation: ${keyFrameMainPage} 3s forwards 0s ease;
 `;
 
 const ProfMainBtn = styled.button`
-  padding: 10px;
-  background-color: #51588e;
-  color: white;
+  padding: 1rem;
+  background-color: #b9b384;
+  color: #404040;
   border: none;
+  font-size: 18px;
+  margin: 1rem;
+  border-radius: 10px;
+  animation: ${keyFrameMainPage} 3s forwards 0s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #404040;
+    color: white;
+  }
 `;
 
 const Professors = () => {
@@ -49,11 +64,7 @@ const Professors = () => {
           We teach across a broad set of specialised subjects and mould young
           minds. But don't be fooled, while some may underestimate us,
           Professors are never to be trifled with. Look no further than the
-          Battle of Hogwarts for your proof."{" "}
-          <p>
-            —Minerva McGonagall addressing members of the S.O.S. wanting to
-            pursue a career as a Profesor
-          </p>
+          Battle of Hogwarts for your proof." <p>—Minerva McGonagall</p>
         </ProfText>
         <Link
           activeClass="active"

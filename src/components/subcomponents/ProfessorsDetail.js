@@ -11,7 +11,7 @@ const CardBody = styled.div`
 const Name = styled.p`
   text-align: center;
   font-weight: bold;
-  background-color: #51588e;
+  background-color: #6d8b90;
   color: white;
   padding: 1rem;
 `;
@@ -21,7 +21,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: #121123;
+  background-color: #181f48;
 `;
 
 const Profile = styled.img`
@@ -37,7 +37,7 @@ const Cards = styled.div`
   display: grid;
   grid-gap: 1.6rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  background-color: #30222b;
+  background-color: #040023;
 `;
 
 const Status = styled.span`
