@@ -46,6 +46,10 @@ const Status = styled.span`
 `;
 
 const ProfessorsDetail = props => {
+  const handleClick = event => {
+    console.log("click");
+  };
+
   return (
     <div className="prof-container" id="professors">
       <Cards>
@@ -72,7 +76,10 @@ const ProfessorsDetail = props => {
                 <Status>Course: </Status>
                 {profData.course}
               </p>
-              <p>Rating: {profData.rating}</p>
+              <p>
+                <Status>Rating:</Status> {profData.rating}{" "}
+                <button onClick={handleClick}>Like</button>
+              </p>
             </CardBody>
           </Card>
         ))}
