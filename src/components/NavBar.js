@@ -27,7 +27,9 @@ const NavBar = () => {
         Home
       </MyLink>
       <MyLink className="menuElement">About</MyLink>
-      <MyLink className="menuElement">Houses</MyLink>
+      <MyLink to={"/houses"} className="menuElement">
+        Houses
+      </MyLink>
       <MyLink className="menuElement" to={"/professors"}>
         Professors
       </MyLink>
