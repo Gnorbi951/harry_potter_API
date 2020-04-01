@@ -9,8 +9,6 @@ import NavBar from "./components/NavBar";
 import Professors from "./components/Professors";
 import { ProfessorsProvider } from "./context/ProfessorsContext";
 
-import "./App.css";
-
 const App = () => {
   return (
     <React.Fragment>

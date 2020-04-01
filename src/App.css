@@ -1,3 +1,4 @@
-body.html {
-  background-color: rgba(0, 0, 0, 0.8);
+body,
+html {
+  background-color: #30222b;
 }
