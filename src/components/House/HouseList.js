@@ -39,6 +39,9 @@ const HouseList = () => {
             </Card>
           </Link>
         ))}
+        <Link to="/sort">
+          <Card>Which house fit to you?</Card>
+        </Link>
       </CardContainer>
     </React.Fragment>
   );
