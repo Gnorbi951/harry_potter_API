@@ -9,11 +9,13 @@ import Professors from "./components/Professors";
 import { ProfessorsProvider } from "./context/ProfessorsContext";
 import SortToHouse from "./components/SortToHouse";
 import { SortProvider } from "./context/SortContext";
+import MuggleDetector from "./components/MuggleDetector";
 
 const App = () => {
   return (
     <React.Fragment>
       <Router>
+        <Route path="/muggleDetector" component={MuggleDetector}></Route>
         <Route exact path="/" component={Home}></Route>
         <HouseProvider>
           <Route
