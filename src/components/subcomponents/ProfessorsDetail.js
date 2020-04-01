@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ProfessorsContext } from "../../context/ProfessorsContext";
 
 const CardBody = styled.div`
   /* margin: 1rem auto; */
@@ -46,9 +47,18 @@ const Status = styled.span`
 `;
 
 const ProfessorsDetail = props => {
+  const [professors, setProfessors] = useContext(ProfessorsContext);
+
   const handleClick = event => {
     const value = event.target.value;
-    console.log(value);
+    let newProfessors = professors;
+    newProfessors.map(element => {
+      if (element._id === value) {
+        element.rating++;
+      }
+    });
+    setProfessors(newProfessors);
+    console.log(professors);
   };
 
   return (
