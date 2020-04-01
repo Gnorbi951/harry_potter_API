@@ -4,7 +4,6 @@ import Home from "./components/Home";
 import HouseList from "./components/House/HouseList";
 import SingleHouse from "./components/House/SingleHouse";
 import { HouseProvider } from "./context/HouseContext";
-// import NavBar from "./components/NavBar";
 import NavBar from "./components/NavBar";
 import Professors from "./components/Professors";
 import { ProfessorsProvider } from "./context/ProfessorsContext";
@@ -17,7 +16,10 @@ const App = () => {
       <Router>
         <Route exact path="/" component={Home}></Route>
         <HouseProvider>
-          <Route path="/(professors|houses)" component={NavBar}></Route>
+          <Route
+            path="/(professors|houses|sortingHat)"
+            component={NavBar}
+          ></Route>
           <Route exact path="/houses" component={HouseList}></Route>
           <Route path="/houses/:id" component={SingleHouse}></Route>
         </HouseProvider>

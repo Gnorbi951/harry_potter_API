@@ -17,7 +17,7 @@ const HouseList = () => {
           </Link>
         ))}
         <Link to="/sortingHat">
-          <Card>Which house fit to you?</Card>
+          <Card>Which house fits to you?</Card>
         </Link>
       </CardContainer>
     </React.Fragment>
