@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import { ProfessorsContext } from "../../context/ProfessorsContext";
 
@@ -48,6 +48,7 @@ const Status = styled.span`
 
 const ProfessorsDetail = props => {
   const [professors, setProfessors] = useContext(ProfessorsContext);
+  const [reload, setReload] = useState();
 
   const handleClick = event => {
     const value = event.target.value;
@@ -55,11 +56,13 @@ const ProfessorsDetail = props => {
     newProfessors.map(element => {
       if (element._id === value) {
         element.rating++;
+        setReload(element.rating);
       }
     });
     setProfessors(newProfessors);
-    console.log(professors);
   };
+
+  useEffect(() => {}, [reload]);
 
   return (
     <div className="prof-container" id="professors">
