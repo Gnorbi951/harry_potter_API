@@ -1,20 +1,20 @@
-import React, {useState, createContext, useEffect} from 'react';
+import React, { useState, createContext, useEffect } from "react";
 import axios from "axios";
 
 export const ProfessorsContext = createContext();
 
 export const ProfessorsProvider = props => {
-    const [professors, setProfessors] = useState([]);
+  const [professors, setProfessors] = useState([]);
 
-    const fetchAllProfessors = () => {
-        axios
+  const fetchAllProfessors = () => {
+    axios
       .get(
         "https://www.potterapi.com/v1/characters?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO"
       )
       .then(res => {
         const professorData = res.data;
         let professorList = [];
-        professorData.filter(character => {
+        professorData.forEach(character => {
           if (
             String(character.role).includes("Professor") &&
             String(character.school).includes("Hogwarts")
@@ -23,18 +23,17 @@ export const ProfessorsProvider = props => {
             character["course"] = course[1];
             character["image"] = `./images/${character._id}.jpg`;
             professorList.push(character);
-            console.log(character.name);
           }
         });
         setProfessors(Array.from(professorList));
       });
-    }
+  };
 
-    useEffect(fetchAllProfessors, [])
+  useEffect(fetchAllProfessors, []);
 
-    return(
-        <ProfessorsContext.Provider value={[professors, setProfessors]}>
-            {props.children}
-        </ProfessorsContext.Provider>
-    );
+  return (
+    <ProfessorsContext.Provider value={[professors, setProfessors]}>
+      {props.children}
+    </ProfessorsContext.Provider>
+  );
 };

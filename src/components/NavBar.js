@@ -22,7 +22,7 @@ const MyLink = styled(Link)`
 
 const NavBar = () => {
   return (
-    <NavBarHeader className="navbar">
+    <NavBarHeader>
       <MyLink className="menuElement" to={"/"}>
         Home
       </MyLink>
