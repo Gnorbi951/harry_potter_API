@@ -13,10 +13,11 @@ const SingleHouse = props => {
         .get(
           `https://www.potterapi.com/v1/houses/${props.match.params.id}?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO`
         )
-        .then(house => setCurrentHouse(house));
+        .then(house => setCurrentHouse(house.data));
+    } else {
+      setCurrentHouse(house);
     }
-    setCurrentHouse(house);
-  }, []);
+  }, [houses, props.match.params.id]);
 
   return (
     <React.Fragment>
