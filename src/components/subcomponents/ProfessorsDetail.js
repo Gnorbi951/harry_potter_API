@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-document.body.style = "background: #040023;";
-
 const CardBody = styled.div`
   /* margin: 1rem auto; */
   /* background-color: #ccc; */

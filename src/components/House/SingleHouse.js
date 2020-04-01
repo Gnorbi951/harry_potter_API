@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { HouseContext, APIKey } from "../../context/HouseContext";
-import { Card, CardContainer } from "../style/HouseStyle";
+import { Card } from "../style/HouseStyle";
 import axios from "axios";
 
 const SingleHouse = props => {
@@ -45,22 +45,21 @@ const SingleHouse = props => {
       <h3>Founder: {currentHouse.founder}</h3>
 
       <h1>Members:</h1>
-      <CardContainer>
-        {members.map(element => (
-          <Card>
-            <ul>
-              <li>{element.name}</li>
-              Blood :<li>{element.bloodStatus}</li>
-              Role:{" "}
-              {element.role !== undefined ? (
-                <li>{element.role}</li>
-              ) : (
-                <li>No role in House</li>
-              )}
-            </ul>
-          </Card>
-        ))}
-      </CardContainer>
+
+      {members.map(element => (
+        <Card>
+          <ul>
+            <li>{element.name}</li>
+            Blood :<li>{element.bloodStatus}</li>
+            Role:{" "}
+            {element.role !== undefined ? (
+              <li>{element.role}</li>
+            ) : (
+              <li>No role in House</li>
+            )}
+          </ul>
+        </Card>
+      ))}
     </React.Fragment>
   );
 };

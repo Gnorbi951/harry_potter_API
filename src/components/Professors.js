@@ -8,7 +8,7 @@ import { keyFrameMainPage } from "./subcomponents/KeyFrames";
 import "../App.css";
 
 import styled from "styled-components";
-document.body.style = "background: #040023;";
+// document.body.style = "backgroundColor: #040023;";
 
 const ProfHeader = styled.div`
   background-image: url(${Background});
@@ -55,7 +55,7 @@ const ProfessorPage = styled.div`
   background-color: #040023;
   background-size: cover;
   display: block;
-  margin: 0;
+  padding-bottom: 100px;
   min-height: 100vh;
 `;
 
@@ -89,6 +89,7 @@ const Professors = () => {
 
         <ProfessorsDetail data={professors} id="professors" />
       </ProfessorPage>
+      <div> </div>
     </React.Fragment>
   );
 };
