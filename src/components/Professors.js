@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ProfessorsContext } from "../context/ProfessorsContext";
 import ProfessorsDetail from "./subcomponents/ProfessorsDetail";
 import Background from "../profback.jpg";
@@ -53,7 +53,6 @@ const ProfMainBtn = styled.button`
 
 const Professors = () => {
   const value = useContext(ProfessorsContext);
-  console.log(value);
   const [professors] = useContext(ProfessorsContext);
 
   return (

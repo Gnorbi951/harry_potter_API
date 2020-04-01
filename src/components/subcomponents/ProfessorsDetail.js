@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
+import { ProfessorsContext } from "../../context/ProfessorsContext";
 
 const CardBody = styled.div`
   /* margin: 1rem auto; */
@@ -46,6 +47,23 @@ const Status = styled.span`
 `;
 
 const ProfessorsDetail = props => {
+  const [professors, setProfessors] = useContext(ProfessorsContext);
+  const [reload, setReload] = useState();
+
+  const handleClick = event => {
+    const value = event.target.value;
+    let newProfessors = professors;
+    newProfessors.map(element => {
+      if (element._id === value) {
+        element.rating++;
+        setReload(element.rating);
+      }
+    });
+    setProfessors(newProfessors);
+  };
+
+  useEffect(() => {}, [reload]);
+
   return (
     <div className="prof-container" id="professors">
       <Cards>
@@ -71,6 +89,12 @@ const ProfessorsDetail = props => {
               <p>
                 <Status>Course: </Status>
                 {profData.course}
+              </p>
+              <p>
+                <Status>Rating:</Status> {profData.rating}
+                <button onClick={handleClick} value={profData._id}>
+                  Like
+                </button>
               </p>
             </CardBody>
           </Card>

@@ -22,14 +22,16 @@ export const ProfessorsProvider = props => {
             let course = character.role.split(",");
             character["course"] = course[1];
             character["image"] = `./images/${character._id}.jpg`;
+            character.rating = 1;
             professorList.push(character);
+            console.log(character);
           }
         });
         setProfessors(Array.from(professorList));
       });
   };
 
-  useEffect(fetchAllProfessors, []);
+  useEffect(fetchAllProfessors, [professors.rating]);
 
   return (
     <ProfessorsContext.Provider value={[professors, setProfessors]}>
