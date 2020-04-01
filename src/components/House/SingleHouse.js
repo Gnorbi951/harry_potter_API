@@ -27,7 +27,6 @@ const SingleHouse = props => {
     axios
       .get(`https://www.potterapi.com/v1/characters/${APIKey}`)
       .then(resp => {
-        console.log(resp.data);
         let houseStudents = [];
         resp.data.forEach(character => {
           if (membersId.includes(character._id)) {
