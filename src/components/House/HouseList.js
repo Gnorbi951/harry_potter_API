@@ -39,7 +39,7 @@ const HouseList = () => {
             </Card>
           </Link>
         ))}
-        <Link to="/sort">
+        <Link to="/sortingHat">
           <Card>Which house fit to you?</Card>
         </Link>
       </CardContainer>
