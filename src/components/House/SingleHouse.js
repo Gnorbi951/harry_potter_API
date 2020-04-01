@@ -6,7 +6,7 @@ const SingleHouse = props => {
   const { houses } = useContext(HouseContext);
   const [currentHouse, setCurrentHouse] = useState({});
   const [membersId, setMembersId] = useState([]);
-  const [members, setMembers] = useState([{}]);
+  const [members, setMembers] = useState([]);
 
   useEffect(() => {
     let house = houses.find(house => house._id === props.match.params.id);
@@ -23,13 +23,18 @@ const SingleHouse = props => {
   }, [houses, props.match.params.id]);
 
   useEffect(() => {
-    membersId.map(_id => {
-      axios
-        .get(`https://www.potterapi.com/v1/characters/${_id}/${APIKey}`)
-        .then(resp => {
-          setMembers(...members, resp.data);
+    axios
+      .get(`https://www.potterapi.com/v1/characters/${APIKey}`)
+      .then(resp => {
+        console.log(resp.data);
+        let houseStudents = [];
+        resp.data.forEach(character => {
+          if (membersId.includes(character._id)) {
+            houseStudents.push(character);
+          }
         });
-    });
+        setMembers(houseStudents);
+      });
   }, [membersId]);
 
   return (
@@ -41,8 +46,8 @@ const SingleHouse = props => {
 
       <h1>Members</h1>
       <ul>
-        {membersId.map(element => (
-          <li>{element}</li>
+        {members.map(element => (
+          <li>{element.name}</li>
         ))}
       </ul>
     </React.Fragment>
