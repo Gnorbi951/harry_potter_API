@@ -56,12 +56,14 @@ const ProfessorsDetail = props => {
     newProfessors.map(element => {
       if (element._id === value) {
         element.rating++;
-        setReload(element.rating);
+        // id + rating is chosen only to be unique, because rating alone is not
+        setReload(element._id + element.rating);
       }
     });
     setProfessors(newProfessors);
   };
 
+  // This is required for rerendering the card when we press the button
   useEffect(() => {}, [reload]);
 
   return (
