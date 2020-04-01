@@ -15,7 +15,7 @@ const App = () => {
       <Router>
         <Route exact path="/" component={Home}></Route>
         <HouseProvider>
-          <Route path="/(professors|houses|)" component={NavBar}></Route>
+          <Route path="/(professors|houses)" component={NavBar}></Route>
           <Route exact path="/houses" component={HouseList}></Route>
           <Route path="/houses/:id" component={SingleHouse}></Route>
         </HouseProvider>

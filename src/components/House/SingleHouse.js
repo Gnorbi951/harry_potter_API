@@ -52,7 +52,7 @@ const SingleHouse = props => {
               <li>{element.name}</li>
               Blood :<li>{element.bloodStatus}</li>
               Role:{" "}
-              {element.role != undefined ? (
+              {element.role !== undefined ? (
                 <li>{element.role}</li>
               ) : (
                 <li>No role in House</li>
