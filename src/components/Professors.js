@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ProfessorsContext } from "../ProfessorsContext";
+import { ProfessorsContext } from "../context/ProfessorsContext";
 import ProfessorsDetail from "./subcomponents/ProfessorsDetail";
 
 const Professors = () => {
