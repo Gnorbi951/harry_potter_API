@@ -8,10 +8,6 @@ const NavBarHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  width: 100vw;
 `;
 
 const MyLink = styled(Link)`
@@ -27,9 +23,15 @@ const MyLink = styled(Link)`
 const NavBar = () => {
   return (
     <NavBarHeader>
+      <MyLink className="menuElement" to={"/"}>
+        Home
+      </MyLink>
       <MyLink className="menuElement">About</MyLink>
       <MyLink className="menuElement">Houses</MyLink>
-      <MyLink className="menuElement">Professors</MyLink>
+      <MyLink className="menuElement" to={"/professors"}>
+        Professors
+      </MyLink>
+
       <MyLink className="menuElement">Courses</MyLink>
     </NavBarHeader>
   );
