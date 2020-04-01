@@ -7,6 +7,7 @@ import { HouseProvider } from "./context/HouseContext";
 // import NavBar from "./components/NavBar";
 import NavBar from "./components/NavBar";
 import Professors from "./components/Professors";
+import Application from "./components/Application";
 import { ProfessorsProvider } from "./context/ProfessorsContext";
 
 import "./App.css";
@@ -17,13 +18,14 @@ const App = () => {
       <Router>
         <Route exact path="/" component={Home}></Route>
         <HouseProvider>
-          <Route exact path="/(professors|houses)" component={NavBar}></Route>
+          <Route exact path="/(professors|houses|application)" component={NavBar}></Route>
           <Route exact path="/houses" component={HouseList}></Route>
           <Route path="/houses/:id" component={SingleHouse}></Route>
         </HouseProvider>
         <ProfessorsProvider>
           <Route exact path="/professors" component={Professors}></Route>
         </ProfessorsProvider>
+        <Route exact path="/application" component={Application}></Route>
       </Router>
     </React.Fragment>
   );
