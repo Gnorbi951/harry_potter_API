@@ -10,9 +10,13 @@ export const Card = styled.div`
   height: 100vh;
   background-color: ${props => props.color};
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
+`;
+export const Logo = styled.img`
+  max-width: 400px;
 `;
 
 export const HouseContainer = styled.div`

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Card } from "../style/HouseStyle";
+import { Card, Logo } from "../style/HouseStyle";
 import { Link } from "react-router-dom";
 import { HouseContext } from "../../context/HouseContext";
 import { findByLabelText } from "@testing-library/react";
@@ -19,6 +19,7 @@ const HouseList = () => {
       {houses.map(data => (
         <Link key={data.name} to={`/houses/${data._id}`}>
           <Card id={data.name} color={themes[data.name]}>
+            <Logo src={require(`./${data.name}.png`)} />
             <h1>{data.name}</h1>
           </Card>
         </Link>

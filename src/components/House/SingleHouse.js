@@ -47,7 +47,7 @@ const SingleHouse = props => {
       <h1>Members:</h1>
 
       {members.map(element => (
-        <Card>
+        <div>
           <ul>
             <li>{element.name}</li>
             Blood :<li>{element.bloodStatus}</li>
@@ -58,7 +58,7 @@ const SingleHouse = props => {
               <li>No role in House</li>
             )}
           </ul>
-        </Card>
+        </div>
       ))}
     </React.Fragment>
   );
