@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NavBarHeader = styled.header`
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
