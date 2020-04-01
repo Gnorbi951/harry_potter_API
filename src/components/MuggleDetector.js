@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSpeechRecognition } from "react-speech-kit";
+import { Link } from "react-router-dom";
 
 const MuggleDetector = () => {
   const [result, setResult] = useState();
