@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
 import HouseList from "./components/House/HouseList";
 import SingleHouse from "./components/House/SingleHouse";
-import { HouseProvider } from "./components/House/HouseContext";
+import { HouseProvider } from "./context/HouseContext";
 // import NavBar from "./components/NavBar";
 import "./App.css";
 

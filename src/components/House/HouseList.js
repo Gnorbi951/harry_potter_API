@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { HouseProvider } from "./HouseContext";
-import { HouseContext } from "./HouseContext";
+import { HouseContext } from "../../context/HouseContext";
 
 const CardContainer = styled.div`
   background-color: 323232;

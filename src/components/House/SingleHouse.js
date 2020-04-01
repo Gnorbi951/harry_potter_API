@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { HouseContext } from "./HouseContext";
+import { HouseContext } from "../../context/HouseContext";
 import axios from "axios";
 
 const SingleHouse = props => {
