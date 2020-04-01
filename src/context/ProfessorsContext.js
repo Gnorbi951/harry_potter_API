@@ -22,6 +22,8 @@ export const ProfessorsProvider = props => {
             let course = character.role.split(",");
             character["course"] = course[1];
             character["image"] = `./images/${character._id}.jpg`;
+            character.rating = 3;
+            console.log(character);
             professorList.push(character);
           }
         });

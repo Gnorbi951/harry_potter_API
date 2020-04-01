@@ -72,6 +72,7 @@ const ProfessorsDetail = props => {
                 <Status>Course: </Status>
                 {profData.course}
               </p>
+              <p>Rating: {profData.rating}</p>
             </CardBody>
           </Card>
         ))}

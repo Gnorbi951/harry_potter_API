@@ -53,7 +53,6 @@ const ProfMainBtn = styled.button`
 
 const Professors = () => {
   const value = useContext(ProfessorsContext);
-  console.log(value);
   const [professors] = useContext(ProfessorsContext);
 
   return (
