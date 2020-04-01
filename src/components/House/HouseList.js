@@ -5,6 +5,7 @@ import { HouseContext } from "../../context/HouseContext";
 
 const HouseList = () => {
   const { houses } = useContext(HouseContext);
+  document.body.style = "background: white;";
 
   return (
     <React.Fragment>

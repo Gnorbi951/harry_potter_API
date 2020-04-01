@@ -22,3 +22,10 @@ export const Card = styled.div`
   border-radius: 2rem;
   background-color: #ff1e56;
 `;
+
+export const HouseContainer = styled.div`
+  margin: 0;
+  height: 100vh;
+  background-color: white;
+  background-size: cover;
+`;

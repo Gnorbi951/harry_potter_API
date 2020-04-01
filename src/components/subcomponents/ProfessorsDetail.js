@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+document.body.style = "background: #040023;";
+
 const CardBody = styled.div`
   /* margin: 1rem auto; */
   /* background-color: #ccc; */
@@ -28,9 +30,11 @@ const Profile = styled.img`
   margin: 0 auto;
   min-width: 300px;
   max-height: 400px;
+  display: block;
 `;
 
 const Cards = styled.div`
+  display: block;
   max-width: 1200px;
   margin: 3rem auto;
   padding: 1.3rem;
@@ -45,9 +49,16 @@ const Status = styled.span`
   color: #feac76;
 `;
 
+const ProfContainer = styled.div`
+  display: block;
+  background-size: cover;
+  min-height: 100vh;
+  background-color: #040023;
+`;
+
 const ProfessorsDetail = props => {
   return (
-    <div className="prof-container" id="professors">
+    <ProfContainer>
       <Cards>
         {props.data.map(profData => (
           <Card>
@@ -76,7 +87,7 @@ const ProfessorsDetail = props => {
           </Card>
         ))}
       </Cards>
-    </div>
+    </ProfContainer>
   );
 };
 export default ProfessorsDetail;
