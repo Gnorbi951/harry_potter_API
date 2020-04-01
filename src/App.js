@@ -15,15 +15,15 @@ const App = () => {
   return (
     <React.Fragment>
       <Router>
-          <Route exact path="/" component={Home}></Route>
+        <Route exact path="/" component={Home}></Route>
         <HouseProvider>
+          <Route exact path="/(professors|houses)" component={NavBar}></Route>
           <Route exact path="/houses" component={HouseList}></Route>
           <Route path="/houses/:id" component={SingleHouse}></Route>
         </HouseProvider>
-      <ProfessorsProvider>
-          <Route exact path="/professors" component={NavBar}></Route>
+        <ProfessorsProvider>
           <Route exact path="/professors" component={Professors}></Route>
-      </ProfessorsProvider>
+        </ProfessorsProvider>
       </Router>
     </React.Fragment>
   );
