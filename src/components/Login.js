@@ -68,16 +68,18 @@ const Login = props => {
   }, [validLogin]);
 
   return (
-    <LoginBackground>
-      <h1>Welcome to our speech converter website!</h1>
-      <SpeechBox>
-        {listening ? "" : ""}
-        <div>
-          <Textarea disabled="disabled" value={result} />
-        </div>
-        <ListenButton onClick={listen}>Listen</ListenButton>
-      </SpeechBox>
-    </LoginBackground>
+    <>
+      <LoginBackground>
+        <h1>Welcome to our speech converter website!</h1>
+        <SpeechBox>
+          {listening ? "" : ""}
+          <div>
+            <Textarea disabled="disabled" value={result} />
+          </div>
+          <ListenButton onClick={listen}>Listen</ListenButton>
+        </SpeechBox>
+      </LoginBackground>
+    </>
   );
 };
 export default Login;
