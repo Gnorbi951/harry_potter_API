@@ -26,7 +26,25 @@ const SpeechBox = styled.div`
 `;
 
 const ListenButton = styled.button`
+  margin: 1rem;
   border-radius: 8px;
+  background-color: teal;
+  padding: 1rem 3rem;
+  border: none;
+`;
+
+const Textarea = styled.textarea`
+  background-color: #404040;
+  color: white;
+  border: none;
+  width: 70%;
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+  font-size: 18px;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Login = props => {
@@ -51,9 +69,9 @@ const Login = props => {
     <LoginBackground>
       <h1>Welcome to our speech converter website!</h1>
       <SpeechBox>
-        {listening ? <h3>Speak, I'm listening</h3> : "Let's get started"}
+        {listening ? "" : ""}
         <div>
-          <textarea value={result} />
+          <Textarea value={result} />
         </div>
         <ListenButton onClick={listen}>Listen</ListenButton>
       </SpeechBox>
