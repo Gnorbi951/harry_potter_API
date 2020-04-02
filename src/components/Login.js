@@ -42,6 +42,7 @@ const Textarea = styled.textarea`
   padding: 10px;
   resize: none;
   font-size: 18px;
+
   &:focus {
     outline: none;
   }
@@ -71,7 +72,7 @@ const Login = props => {
       <SpeechBox>
         {listening ? "" : ""}
         <div>
-          <Textarea value={result} />
+          <Textarea disabled="disabled" value={result} />
         </div>
         <ListenButton onClick={listen}>Listen</ListenButton>
       </SpeechBox>
