@@ -19,7 +19,7 @@ export const glowing = keyframes`
     100% { background-position: 0 0; }
 }
 
-
+`;
 export const Owl = keyframes`
 0% {
      transform: translateY(0);
