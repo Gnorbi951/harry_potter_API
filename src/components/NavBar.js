@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -27,7 +27,9 @@ const NavBar = () => {
       <MyLink className="menuElement" to={"/"}>
         Home
       </MyLink>
-      <MyLink className="menuElement">About</MyLink>
+      <MyLink className="menuElement" to={"/about"}>
+        About
+      </MyLink>
       <MyLink to={"/houses"} className="menuElement">
         Houses
       </MyLink>
