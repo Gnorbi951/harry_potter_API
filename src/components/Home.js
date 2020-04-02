@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Background from "../back.jpg";
 import NavBar from "./NavBar";
 import { keyFrameMainPage } from "./subcomponents/KeyFrames";
+import HouseList from "./House/HouseList";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const MainPage = styled.div`
   background-image: url(${Background});
@@ -49,7 +51,12 @@ const Home = () => {
         <NavBar />
       </NavContainer>
       <MainTitle>Hogwarts School of Witchcraft and Wizardry</MainTitle>
-      <MainButton>Check out our Houses</MainButton>
+      <Link to="/houses">
+        <MainButton>Check out our Houses</MainButton>
+      </Link>
+      <Router>
+        <Route exact path="/houses" component={HouseList}></Route>
+      </Router>
     </MainPage>
   );
 };
