@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home";
 import HouseList from "./components/House/HouseList";
 import SingleHouse from "./components/House/SingleHouse";
@@ -9,12 +9,20 @@ import Professors from "./components/Professors";
 import { ProfessorsProvider } from "./context/ProfessorsContext";
 import SortToHouse from "./components/SortToHouse";
 import { SortProvider } from "./context/SortContext";
+import { LoginContext } from "./context/LoginContext";
+import Login from "./components/Login";
 
 const App = () => {
+  const { validLogin } = useContext(LoginContext);
+
   return (
     <React.Fragment>
       <Router>
         <Route exact path="/" component={Home}></Route>
+        <Route exact path="/login" component={Login}></Route>
+        <Route
+          render={() => (validLogin ? null : <Redirect to="/login" />)}
+        ></Route>
         <HouseProvider>
           <Route
             path="/(professors|houses|sortingHat)"
@@ -33,5 +41,4 @@ const App = () => {
     </React.Fragment>
   );
 };
-
 export default App;
