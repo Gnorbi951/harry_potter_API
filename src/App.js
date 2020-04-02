@@ -21,7 +21,7 @@ const App = () => {
       <Router>
         <Route
           exact
-          path="/(professors|houses|sortingHat|login|about)"
+          path="/(professors|houses|sortingHat|about)"
           component={NavBar}
         ></Route>
         <Route exact path="/" component={Home}></Route>

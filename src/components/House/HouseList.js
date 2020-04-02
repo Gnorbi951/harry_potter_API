@@ -35,7 +35,7 @@ const HouseList = () => {
   return (
     <React.Fragment>
       <SortingHat>
-        <p>Which house fits to you?</p>
+        <p>Which house fits you?</p>
         <Link style={{ textDecoration: "none" }} to="/sortingHat">
           <SortingLink>Ask the Sorting Hat!</SortingLink>
         </Link>
