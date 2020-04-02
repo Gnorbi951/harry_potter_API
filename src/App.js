@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home";
 import HouseList from "./components/House/HouseList";
 import SingleHouse from "./components/House/SingleHouse";
@@ -11,12 +11,29 @@ import SortToHouse from "./components/SortToHouse";
 import { SortProvider } from "./context/SortContext";
 import { useSpeechRecognition } from "react-speech-kit";
 import { LoginContext } from "./context/LoginContext";
+import Login from "./components/Login";
 
-function returnFunct() {
+const App = () => {
+  const { validLogin } = useContext(LoginContext);
+  const [isMuggle, setIsMuggle] = useState();
+  const [result, setResult] = useState([]);
+
+  function setMuggle() {
+    // {[result] = "kutya" ? setIsMuggle(false) : setIsMuggle(true) }
+    if (result[result.length - 1] === "kutya") {
+      setIsMuggle(false);
+    }
+    console.log([result]);
+  }
+
   return (
     <React.Fragment>
       <Router>
         <Route exact path="/" component={Home}></Route>
+        <Route exact path="/login" component={Login}></Route>
+        <Route
+          render={() => (validLogin ? null : <Redirect to="/login" />)}
+        ></Route>
         <HouseProvider>
           <Route
             path="/(professors|houses|sortingHat)"
@@ -33,40 +50,6 @@ function returnFunct() {
         </ProfessorsProvider>
       </Router>
     </React.Fragment>
-  );
-}
-
-const App = () => {
-  const { validLogin } = useContext(LoginContext);
-  const [isMuggle, setIsMuggle] = useState();
-  const [result, setResult] = useState([]);
-  const { listen, listening, stop } = useSpeechRecognition({
-    onResult: result => setResult([result])
-  });
-
-  function setMuggle() {
-    // {[result] = "kutya" ? setIsMuggle(false) : setIsMuggle(true) }
-    if (result[result.length - 1] === "kutya") {
-      setIsMuggle(false);
-    }
-    console.log([result]);
-  }
-
-  return (
-    <div>
-      {listening ? "Speak, I'm listening" : ""}
-      <textarea value={result} />
-      <button onClick={listen}>Listen</button>
-      <button
-        onClick={() => {
-          stop();
-          setMuggle();
-        }}
-      >
-        Stop
-      </button>
-      {isMuggle === false ? returnFunct() : ""}
-    </div>
   );
 };
 export default App;
