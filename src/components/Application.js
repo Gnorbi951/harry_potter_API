@@ -60,6 +60,8 @@ const Application = () => {
       }
     });
     alert("Successful application! The owl is on it's way to you :D");
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
   };
 
   return (
@@ -68,7 +70,7 @@ const Application = () => {
         src={require("./subcomponents/images/owl.jpg")}
         alt="Owl"
       ></OwlImage>
-      <Form onSubmit={handleSubmit} method="POST">
+      <Form onSubmit={handleSubmit} method="POST" id="form">
         <Input
           type="text"
           id="name"
@@ -82,7 +84,7 @@ const Application = () => {
           placeholder="E-mail"
           autoComplete="off"
         ></Input>
-        <Submit type="submit">submit application</Submit>
+        <Submit type="submit">Submit application</Submit>
       </Form>
     </FieldContainer>
   );
