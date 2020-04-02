@@ -81,7 +81,7 @@ const ProfessorsDetail = props => {
     <div id="professor">
       <Cards>
         {props.data.map(profData => (
-          <Card>
+          <Card key={profData.name}>
             <Profile
               src={require(`${profData.image}`)}
               alt="Wizard profile"
