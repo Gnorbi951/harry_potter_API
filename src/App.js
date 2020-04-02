@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home";
 import HouseList from "./components/House/HouseList";
@@ -9,22 +9,11 @@ import Professors from "./components/Professors";
 import { ProfessorsProvider } from "./context/ProfessorsContext";
 import SortToHouse from "./components/SortToHouse";
 import { SortProvider } from "./context/SortContext";
-import { useSpeechRecognition } from "react-speech-kit";
 import { LoginContext } from "./context/LoginContext";
 import Login from "./components/Login";
 
 const App = () => {
   const { validLogin } = useContext(LoginContext);
-  const [isMuggle, setIsMuggle] = useState();
-  const [result, setResult] = useState([]);
-
-  function setMuggle() {
-    // {[result] = "kutya" ? setIsMuggle(false) : setIsMuggle(true) }
-    if (result[result.length - 1] === "kutya") {
-      setIsMuggle(false);
-    }
-    console.log([result]);
-  }
 
   return (
     <React.Fragment>

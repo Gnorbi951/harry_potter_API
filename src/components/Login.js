@@ -1,8 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useSpeechRecognition } from "react-speech-kit";
 import { LoginContext } from "../context/LoginContext";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import App from "../App";
 
 const Login = props => {
   const [result, setResult] = useState();
