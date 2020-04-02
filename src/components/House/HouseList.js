@@ -1,45 +1,63 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
+import {
+  Card,
+  Logo,
+  LogoSection,
+  TextSection,
+  Cards,
+  Name,
+  SortingHat,
+  SortingLink
+} from "../style/HouseStyle";
 import { Link } from "react-router-dom";
 import { HouseContext } from "../../context/HouseContext";
 
-const CardContainer = styled.div`
-  background-color: 323232;
-`;
-
-const Card = styled.div`
-  position: relative;
-
-  display: inline-block;
-  margin: 5px;
-  margin-top: 1rem;
-  margin-bottom: 20px;
-  padding: 24px;
-
-  border-style: solid;
-  border-radius: 2px;
-  background: grey;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
-
-  border-radius: 2rem;
-  background-color: #ff1e56;
-`;
-
 const HouseList = () => {
   const { houses } = useContext(HouseContext);
+  document.body.style = "background: white;";
+  let themes = {
+    Gryffindor: "#E32E35",
+    Slytherin: "#2F8C7D",
+    Ravenclaw: "#39478A",
+    Hufflepuff: "#FFAD34"
+  };
+  let description = {
+    Gryffindor:
+      "'You might belong in Gryffindor, Where dwell the brave at heart,Their daring, nerve and chivalry,Set Gryffindors apart.'",
+    Slytherin:
+      "'Or perhaps in Slytherin You’ll make your real friends Those cunning folk use any means To achieve their ends'",
+    Ravenclaw:
+      "'Or yet in wise old Ravenclaw If you’ve a ready mind Where those of wit and learning Will always find their kind.'",
+    Hufflepuff:
+      "'You might belong in Hufflepuff Where they are just and loyal Those patient Hufflepuffs are true And unafraid of toil.'"
+  };
 
   return (
     <React.Fragment>
-      <CardContainer>
+      <SortingHat>
+        <p>Which house fits to you?</p>
+        <Link style={{ textDecoration: "none" }} to="/sortingHat">
+          <SortingLink>Ask the Sorting Hat!</SortingLink>
+        </Link>
+      </SortingHat>
+
+      <Cards>
         {houses.map(data => (
-          <Link key={data.name} to={`/houses/${data._id}`}>
-            <Card id={data.name}>
-              <h1>{data.name}</h1>
-            </Card>
-          </Link>
+          <Card color={themes[data.name]} id={data.name}>
+            <LogoSection>
+              <Link
+                style={{ textDecoration: "none" }}
+                key={data.name}
+                to={`/houses/${data._id}`}
+              >
+                <Logo src={require(`./${data.name}.png`)} />
+                <Name>{data.name}</Name>
+              </Link>
+            </LogoSection>
+            <TextSection>{description[`${data.name}`]}</TextSection>
+          </Card>
         ))}
-      </CardContainer>
+      </Cards>
     </React.Fragment>
   );
 };

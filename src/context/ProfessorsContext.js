@@ -9,7 +9,7 @@ export const ProfessorsProvider = props => {
   const fetchAllProfessors = () => {
     axios
       .get(
-        "https://www.potterapi.com/v1/characters?&key=$2a$10$k64D2VOaGCBynzK6r9E4GeAZKmgXwdSWjJwFdiicclaHlo6EPJmkO"
+        "https://www.potterapi.com/v1/characters?&key=$2a$10$UBcvxLOw7cLZMbrQME/u3eSCZZ.E9qRUhPT93HVD42i69IJuokjaq"
       )
       .then(res => {
         const professorData = res.data;
@@ -22,14 +22,16 @@ export const ProfessorsProvider = props => {
             let course = character.role.split(",");
             character["course"] = course[1];
             character["image"] = `./images/${character._id}.jpg`;
+            character.rating = 1;
             professorList.push(character);
+            console.log(character);
           }
         });
         setProfessors(Array.from(professorList));
       });
   };
 
-  useEffect(fetchAllProfessors, []);
+  useEffect(fetchAllProfessors, [professors.rating]);
 
   return (
     <ProfessorsContext.Provider value={[professors, setProfessors]}>

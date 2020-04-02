@@ -1,3 +1,5 @@
-body.html {
-  background-color: rgba(0, 0, 0, 0.8);
+body,
+html {
+  /* height: 100% !important;
+  background-color: #040023; */
 }
