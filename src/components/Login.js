@@ -58,13 +58,14 @@ const Login = props => {
       if (result === "alohomora" && loggedIn === false) {
         setValidLogin(true);
         props.history.push("/");
-        stop();
         loggedIn = true;
       }
     }
   });
 
-  useEffect(() => {}, [validLogin]);
+  useEffect(() => {
+    stop();
+  }, [validLogin]);
 
   return (
     <LoginBackground>
