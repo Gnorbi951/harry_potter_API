@@ -94,8 +94,8 @@ export const SortingLink = styled.h1`
 `;
 
 export const Description = styled.div`
-  border-top: 4px solid #d80000;
-  border-bottom: 4px solid #d80000;
+  border-top: 4px solid ${props => props.color};
+  border-bottom: 4px solid ${props => props.color};
   border-radius: 20px;
   padding: 1rem;
   max-width: 50%;
@@ -103,10 +103,10 @@ export const Description = styled.div`
 `;
 
 export const HouseName = styled.h1`
-  color: #d80000;
+  color: ${props => props.color};
   margin: 0 auto;
 `;
 
 export const StudentName = styled.h3`
-  color: #d80000;
+  color: ${props => props.color};
 `;
