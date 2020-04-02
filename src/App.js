@@ -36,8 +36,8 @@ function returnFunct() {
   );
 }
 
-const App = props => {
-  const [validLogin, setValidLogin] = useContext(LoginContext);
+const App = () => {
+  const { validLogin } = useContext(LoginContext);
   const [isMuggle, setIsMuggle] = useState();
   const [result, setResult] = useState([]);
   const { listen, listening, stop } = useSpeechRecognition({
