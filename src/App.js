@@ -22,7 +22,7 @@ const App = () => {
       <Router>
         <Route
           exact
-          path="/(professors|houses|sortingHat|about)"
+          path="/(professors|houses|sortingHat|about|application)"
           component={NavBar}
         ></Route>
         <Route exact path="/" component={Home}></Route>
@@ -32,11 +32,6 @@ const App = () => {
         ></Route>
         <Route exact path="/about" component={About}></Route>
         <HouseProvider>
-          <Route
-            exact
-            path="/(professors|houses|application|sortingHat)"
-            component={NavBar}
-          ></Route>
           <Route exact path="/houses" component={HouseList}></Route>
           <Route path="/houses/:id" component={SingleHouse}></Route>
         </HouseProvider>
