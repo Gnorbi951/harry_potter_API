@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
 import HouseList from "./components/House/HouseList";
@@ -10,10 +10,7 @@ import { ProfessorsProvider } from "./context/ProfessorsContext";
 import SortToHouse from "./components/SortToHouse";
 import { SortProvider } from "./context/SortContext";
 import { useSpeechRecognition } from "react-speech-kit";
-
-function placeHolder() {
-  return <React.Fragment>nono</React.Fragment>;
-}
+import { LoginContext } from "./context/LoginContext";
 
 function returnFunct() {
   return (
@@ -39,7 +36,8 @@ function returnFunct() {
   );
 }
 
-function App() {
+const App = props => {
+  const [validLogin, setValidLogin] = useContext(LoginContext);
   const [isMuggle, setIsMuggle] = useState();
   const [result, setResult] = useState([]);
   const { listen, listening, stop } = useSpeechRecognition({
@@ -70,5 +68,5 @@ function App() {
       {isMuggle === false ? returnFunct() : ""}
     </div>
   );
-}
+};
 export default App;

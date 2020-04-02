@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSpeechRecognition } from "react-speech-kit";
 
-const MuggleDetector = () => {
+const ValidateLogin = () => {
   const [result, setResult] = useState();
   const { listen, listening, stop } = useSpeechRecognition({
     onResult: result => setResult(result)
@@ -16,4 +16,4 @@ const MuggleDetector = () => {
     </div>
   );
 };
-export default MuggleDetector;
+export default ValidateLogin;
