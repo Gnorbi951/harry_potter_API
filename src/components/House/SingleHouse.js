@@ -81,7 +81,7 @@ const SingleHouse = props => {
       </HouseName>
       <Members>
         {members.map(element => (
-          <Student color={themes[`${currentHouse.name}`]}>
+          <Student color={themes[`${currentHouse.name}`]} key={element.name}>
             <StudentName color={themes[`${currentHouse.name}`]}>
               {element.name}
             </StudentName>
