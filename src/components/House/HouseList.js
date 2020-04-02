@@ -11,7 +11,6 @@ import {
 } from "../style/HouseStyle";
 import { Link } from "react-router-dom";
 import { HouseContext } from "../../context/HouseContext";
-import SortToHouse from "../SortToHouse";
 
 const HouseList = () => {
   const { houses } = useContext(HouseContext);

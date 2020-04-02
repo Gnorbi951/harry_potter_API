@@ -12,6 +12,28 @@ export const Cards = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   background-color: white;
 `;
+
+export const Members = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.3rem;
+  display: grid;
+  grid-gap: 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  background-color: white;
+  text-align: center;
+`;
+
+export const Student = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f7f7f7;
+`;
 export const Card = styled.div`
   color: white;
   padding: 2rem;
@@ -28,10 +50,8 @@ export const Logo = styled.img`
 `;
 
 export const HouseContainer = styled.div`
-  margin: 0;
-  height: 100vh;
-  background-color: white;
-  background-size: cover;
+  margin: 1rem auto;
+  text-align: center;
 `;
 
 export const Name = styled.h1`
@@ -71,4 +91,22 @@ export const SortingLink = styled.h1`
     cursor: pointer;
     color: white;
   }
+`;
+
+export const Description = styled.div`
+  border-top: 4px solid #d80000;
+  border-bottom: 4px solid #d80000;
+  border-radius: 20px;
+  padding: 1rem;
+  max-width: 50%;
+  margin: 0 auto 1rem auto;
+`;
+
+export const HouseName = styled.h1`
+  color: #d80000;
+  margin: 0 auto;
+`;
+
+export const StudentName = styled.h3`
+  color: #d80000;
 `;
