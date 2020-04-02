@@ -46,6 +46,17 @@ const Status = styled.span`
   color: #feac76;
 `;
 
+const Heart = styled.button`
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+`;
+
 const ProfessorsDetail = props => {
   const [professors, setProfessors] = useContext(ProfessorsContext);
   const [reload, setReload] = useState();
@@ -93,10 +104,9 @@ const ProfessorsDetail = props => {
                 {profData.course}
               </p>
               <p>
-                <Status>Rating:</Status> {profData.rating}
-                <button onClick={handleClick} value={profData._id}>
-                  Like
-                </button>
+                <Heart onClick={handleClick} value={profData._id}>
+                  {profData.rating} &#128159;
+                </Heart>
               </p>
             </CardBody>
           </Card>
