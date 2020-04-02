@@ -12,7 +12,6 @@ const ValidateLogin = () => {
       {listening ? "Speak, I'm listening" : ""}
       <textarea value={result} />
       <button onClick={listen}>Listen</button>
-      <button onClick={stop}>Stop</button>
     </div>
   );
 };
