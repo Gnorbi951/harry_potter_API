@@ -34,7 +34,7 @@ const About = () => {
         </ul>
         <Link>
           <a href="https://github.com/Gnorbi951/harry_potter_API">
-            Link to our github repository
+            Link to github repository
           </a>
         </Link>
         <Link>
