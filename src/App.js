@@ -6,6 +6,7 @@ import SingleHouse from "./components/House/SingleHouse";
 import { HouseProvider } from "./context/HouseContext";
 import NavBar from "./components/NavBar";
 import Professors from "./components/Professors";
+import Application from "./components/Application";
 import { ProfessorsProvider } from "./context/ProfessorsContext";
 import SortToHouse from "./components/SortToHouse";
 import { SortProvider } from "./context/SortContext";
@@ -31,6 +32,11 @@ const App = () => {
         ></Route>
         <Route exact path="/about" component={About}></Route>
         <HouseProvider>
+          <Route
+            exact
+            path="/(professors|houses|application|sortingHat)"
+            component={NavBar}
+          ></Route>
           <Route exact path="/houses" component={HouseList}></Route>
           <Route path="/houses/:id" component={SingleHouse}></Route>
         </HouseProvider>
@@ -40,6 +46,7 @@ const App = () => {
         <ProfessorsProvider>
           <Route exact path="/professors" component={Professors}></Route>
         </ProfessorsProvider>
+        <Route exact path="/application" component={Application}></Route>
       </Router>
     </React.Fragment>
   );

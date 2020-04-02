@@ -37,7 +37,7 @@ const NavBar = () => {
         Professors
       </MyLink>
 
-      <MyLink className="menuElement">Courses</MyLink>
+      <MyLink className="menuElement" to={"/application"}>Application</MyLink>
     </NavBarHeader>
   );
 };
