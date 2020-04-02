@@ -58,14 +58,8 @@ const Application = () => {
         name: name,
         email: email
       }
-    }).then(response => {
-      if (response.data.msg === "success") {
-        alert("Message Sent.");
-        this.resetForm();
-      } else if (response.data.msg === "fail") {
-        alert("Message failed to send.");
-      }
     });
+    alert("Successful application! The owl is on it's way to you :D");
   };
 
   return (
