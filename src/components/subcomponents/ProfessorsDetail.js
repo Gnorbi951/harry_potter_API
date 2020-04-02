@@ -53,7 +53,7 @@ const ProfessorsDetail = props => {
   const handleClick = event => {
     const value = event.target.value;
     let newProfessors = professors;
-    newProfessors.map(element => {
+    newProfessors.forEach(element => {
       if (element._id === value) {
         element.rating++;
         // id + rating is chosen only to be unique, because rating alone is not
