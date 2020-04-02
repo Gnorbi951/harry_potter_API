@@ -47,34 +47,36 @@ const Status = styled.span`
 
 const ProfessorsDetail = props => {
   return (
-    <Cards>
-      {props.data.map(profData => (
-        <Card>
-          <Profile
-            src={require(`${profData.image}`)}
-            alt="Wizard profile"
-          ></Profile>
-          <CardBody>
-            <Name>{profData.name}</Name>
-            <p>
-              <Status>In Dumbledore's army: </Status>
-              {profData.dumbledoresArmy ? "Yes" : "No"}
-            </p>
-            <p>
-              <Status>Blood status:</Status> {profData.bloodStatus}
-            </p>
-            <p>
-              <Status>Species: </Status>
-              {profData.species}
-            </p>
-            <p>
-              <Status>Course: </Status>
-              {profData.course}
-            </p>
-          </CardBody>
-        </Card>
-      ))}
-    </Cards>
+    <div id="professor">
+      <Cards>
+        {props.data.map(profData => (
+          <Card>
+            <Profile
+              src={require(`${profData.image}`)}
+              alt="Wizard profile"
+            ></Profile>
+            <CardBody>
+              <Name>{profData.name}</Name>
+              <p>
+                <Status>In Dumbledore's army: </Status>
+                {profData.dumbledoresArmy ? "Yes" : "No"}
+              </p>
+              <p>
+                <Status>Blood status:</Status> {profData.bloodStatus}
+              </p>
+              <p>
+                <Status>Species: </Status>
+                {profData.species}
+              </p>
+              <p>
+                <Status>Course: </Status>
+                {profData.course}
+              </p>
+            </CardBody>
+          </Card>
+        ))}
+      </Cards>
+    </div>
   );
 };
 export default ProfessorsDetail;
