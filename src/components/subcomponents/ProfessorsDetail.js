@@ -67,7 +67,7 @@ const ProfessorsDetail = props => {
   useEffect(() => {}, [reload]);
 
   return (
-    <div className="prof-container" id="professors">
+    <div id="professor">
       <Cards>
         {props.data.map(profData => (
           <Card>

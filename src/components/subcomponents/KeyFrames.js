@@ -10,3 +10,13 @@ export const keyFrameMainPage = keyframes`
         opacity: 1;
     }
   `;
+
+export const glowing = keyframes` 
+
+{
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+`;

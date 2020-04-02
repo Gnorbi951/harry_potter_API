@@ -3,6 +3,7 @@ import { ProfessorsContext } from "../context/ProfessorsContext";
 import ProfessorsDetail from "./subcomponents/ProfessorsDetail";
 import Background from "../profback.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
+
 import { keyFrameMainPage } from "./subcomponents/KeyFrames";
 
 import "../App.css";
@@ -14,7 +15,6 @@ const ProfHeader = styled.div`
   background-position: bottom;
   width: 100%;
   height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,33 +50,42 @@ const ProfMainBtn = styled.button`
     color: white;
   }
 `;
+const ProfessorPage = styled.div`
+  background-color: #040023;
+  background-size: cover;
+  padding-bottom: 100px;
+  min-height: 100vh;
+`;
 
 const Professors = () => {
   const [professors] = useContext(ProfessorsContext);
 
   return (
     <React.Fragment>
-      <ProfHeader>
-        <ProfText>
-          "Professors have a long and valued history within the wizarding world.
-          We teach across a broad set of specialised subjects and mould young
-          minds. But don't be fooled, while some may underestimate us,
-          Professors are never to be trifled with. Look no further than the
-          Battle of Hogwarts for your proof." <p>—Minerva McGonagall</p>
-        </ProfText>
-        <Link
-          activeClass="active"
-          to="professors"
-          spy={true}
-          smooth={true}
-          offset={-70}
-          duration={500}
-        >
-          <ProfMainBtn>Our Professors</ProfMainBtn>
-        </Link>
-      </ProfHeader>
+      <ProfessorPage>
+        <ProfHeader>
+          <ProfText>
+            "Professors have a long and valued history within the wizarding
+            world. We teach across a broad set of specialised subjects and mould
+            young minds. But don't be fooled, while some may underestimate us,
+            Professors are never to be trifled with. Look no further than the
+            Battle of Hogwarts for your proof." <p>—Minerva McGonagall</p>
+          </ProfText>
+          <Link
+            activeClass="active"
+            to="professor"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <ProfMainBtn>Our Professors</ProfMainBtn>
+          </Link>
+        </ProfHeader>
 
-      <ProfessorsDetail data={professors} id="professors" />
+        <ProfessorsDetail data={professors} id="professor" />
+      </ProfessorPage>
+      <div> </div>
     </React.Fragment>
   );
 };
