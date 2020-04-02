@@ -28,11 +28,9 @@ const Profile = styled.img`
   margin: 0 auto;
   min-width: 300px;
   max-height: 400px;
-  display: block;
 `;
 
 const Cards = styled.div`
-  display: block;
   max-width: 1200px;
   margin: 3rem auto;
   padding: 1.3rem;
@@ -47,45 +45,36 @@ const Status = styled.span`
   color: #feac76;
 `;
 
-const ProfContainer = styled.div`
-  display: block;
-  background-size: cover;
-  min-height: 100vh;
-  background-color: #040023;
-`;
-
 const ProfessorsDetail = props => {
   return (
-    <ProfContainer>
-      <Cards>
-        {props.data.map(profData => (
-          <Card>
-            <Profile
-              src={require(`${profData.image}`)}
-              alt="Wizard profile"
-            ></Profile>
-            <CardBody>
-              <Name>{profData.name}</Name>
-              <p>
-                <Status>In Dumbledore's army: </Status>
-                {profData.dumbledoresArmy ? "Yes" : "No"}
-              </p>
-              <p>
-                <Status>Blood status:</Status> {profData.bloodStatus}
-              </p>
-              <p>
-                <Status>Species: </Status>
-                {profData.species}
-              </p>
-              <p>
-                <Status>Course: </Status>
-                {profData.course}
-              </p>
-            </CardBody>
-          </Card>
-        ))}
-      </Cards>
-    </ProfContainer>
+    <Cards>
+      {props.data.map(profData => (
+        <Card>
+          <Profile
+            src={require(`${profData.image}`)}
+            alt="Wizard profile"
+          ></Profile>
+          <CardBody>
+            <Name>{profData.name}</Name>
+            <p>
+              <Status>In Dumbledore's army: </Status>
+              {profData.dumbledoresArmy ? "Yes" : "No"}
+            </p>
+            <p>
+              <Status>Blood status:</Status> {profData.bloodStatus}
+            </p>
+            <p>
+              <Status>Species: </Status>
+              {profData.species}
+            </p>
+            <p>
+              <Status>Course: </Status>
+              {profData.course}
+            </p>
+          </CardBody>
+        </Card>
+      ))}
+    </Cards>
   );
 };
 export default ProfessorsDetail;

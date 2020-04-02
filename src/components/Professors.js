@@ -3,19 +3,18 @@ import { ProfessorsContext } from "../context/ProfessorsContext";
 import ProfessorsDetail from "./subcomponents/ProfessorsDetail";
 import Background from "../profback.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
+
 import { keyFrameMainPage } from "./subcomponents/KeyFrames";
 
 import "../App.css";
 
 import styled from "styled-components";
-// document.body.style = "backgroundColor: #040023;";
 
 const ProfHeader = styled.div`
   background-image: url(${Background});
   background-position: bottom;
   width: 100%;
   height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,14 +53,11 @@ const ProfMainBtn = styled.button`
 const ProfessorPage = styled.div`
   background-color: #040023;
   background-size: cover;
-  display: block;
   padding-bottom: 100px;
   min-height: 100vh;
 `;
 
 const Professors = () => {
-  const value = useContext(ProfessorsContext);
-  console.log(value);
   const [professors] = useContext(ProfessorsContext);
 
   return (
@@ -77,7 +73,7 @@ const Professors = () => {
           </ProfText>
           <Link
             activeClass="active"
-            to="professors"
+            to="professor"
             spy={true}
             smooth={true}
             offset={-70}
@@ -87,7 +83,7 @@ const Professors = () => {
           </Link>
         </ProfHeader>
 
-        <ProfessorsDetail data={professors} id="professors" />
+        <ProfessorsDetail data={professors} id="professor" />
       </ProfessorPage>
       <div> </div>
     </React.Fragment>
