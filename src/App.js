@@ -21,7 +21,6 @@ const App = () => {
     <React.Fragment>
       <Router>
         <Route
-          exact
           path="/(professors|houses|sortingHat|about|application)"
           component={NavBar}
         ></Route>
