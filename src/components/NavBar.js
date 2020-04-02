@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { LoginContext } from "../context/LoginContext";
 
 const NavBarHeader = styled.header`
   padding: 1rem;
@@ -22,24 +23,39 @@ const MyLink = styled(Link)`
 `;
 
 const NavBar = () => {
-  return (
-    <NavBarHeader>
-      <MyLink className="menuElement" to={"/"}>
-        Home
-      </MyLink>
-      <MyLink className="menuElement" to={"/about"}>
-        About
-      </MyLink>
-      <MyLink to={"/houses"} className="menuElement">
-        Houses
-      </MyLink>
-      <MyLink className="menuElement" to={"/professors"}>
-        Professors
-      </MyLink>
+  const { validLogin } = useContext(LoginContext);
 
-      <MyLink className="menuElement">Courses</MyLink>
-    </NavBarHeader>
-  );
+  if (validLogin) {
+    return (
+      <NavBarHeader>
+        <MyLink className="menuElement" to={"/"}>
+          Home
+        </MyLink>
+        <MyLink className="menuElement" to={"/about"}>
+          About
+        </MyLink>
+        <MyLink to={"/houses"} className="menuElement">
+          Houses
+        </MyLink>
+        <MyLink className="menuElement" to={"/professors"}>
+          Professors
+        </MyLink>
+
+        <MyLink className="menuElement">Courses</MyLink>
+      </NavBarHeader>
+    );
+  } else {
+    return (
+      <NavBarHeader>
+        <MyLink className="menuElement">Home</MyLink>
+        <MyLink className="menuElement">About</MyLink>
+        <MyLink className="menuElement">Houses</MyLink>
+        <MyLink className="menuElement">Professors</MyLink>
+
+        <MyLink className="menuElement">Courses</MyLink>
+      </NavBarHeader>
+    );
+  }
 };
 
 export default NavBar;
