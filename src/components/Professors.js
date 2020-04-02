@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ProfessorsContext } from "../context/ProfessorsContext";
 import ProfessorsDetail from "./subcomponents/ProfessorsDetail";
 import Background from "../profback.jpg";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 import { keyFrameMainPage } from "./subcomponents/KeyFrames";
 

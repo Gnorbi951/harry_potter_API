@@ -43,7 +43,7 @@ const HouseList = () => {
 
       <Cards>
         {houses.map(data => (
-          <Card color={themes[data.name]} id={data.name}>
+          <Card color={themes[data.name]} id={data.name} key={data.name}>
             <LogoSection>
               <Link
                 style={{ textDecoration: "none" }}

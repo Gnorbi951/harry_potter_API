@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -23,22 +23,26 @@ const MyLink = styled(Link)`
 
 const NavBar = () => {
   return (
-    <NavBarHeader>
-      <MyLink className="menuElement" to={"/"}>
-        Home
-      </MyLink>
-      <MyLink className="menuElement" to={"/about"}>
-        About
-      </MyLink>
-      <MyLink to={"/houses"} className="menuElement">
-        Houses
-      </MyLink>
-      <MyLink className="menuElement" to={"/professors"}>
-        Professors
-      </MyLink>
+    <>
+      <NavBarHeader>
+        <MyLink className="menuElement" to={"/"}>
+          Home
+        </MyLink>
+        <MyLink className="menuElement" to={"/about"}>
+          About
+        </MyLink>
+        <MyLink to={"/houses"} className="menuElement">
+          Houses
+        </MyLink>
+        <MyLink className="menuElement" to={"/professors"}>
+          Professors
+        </MyLink>
 
-      <MyLink className="menuElement" to={"/application"}>Application</MyLink>
-    </NavBarHeader>
+        <MyLink className="menuElement" to={"/application"}>
+          Application
+        </MyLink>
+      </NavBarHeader>
+    </>
   );
 };
 

@@ -65,28 +65,30 @@ const Application = () => {
   };
 
   return (
-    <FieldContainer>
-      <OwlImage
-        src={require("./subcomponents/images/owl.jpg")}
-        alt="Owl"
-      ></OwlImage>
-      <Form onSubmit={handleSubmit} method="POST" id="form">
-        <Input
-          type="text"
-          id="name"
-          placeholder="Name"
-          autoComplete="off"
-        ></Input>
+    <>
+      <FieldContainer>
+        <OwlImage
+          src={require("./subcomponents/images/owl.jpg")}
+          alt="Owl"
+        ></OwlImage>
+        <Form onSubmit={handleSubmit} method="POST" id="form">
+          <Input
+            type="text"
+            id="name"
+            placeholder="Name"
+            autoComplete="off"
+          ></Input>
 
-        <Input
-          type="email"
-          id="email"
-          placeholder="E-mail"
-          autoComplete="off"
-        ></Input>
-        <Submit type="submit">Submit application</Submit>
-      </Form>
-    </FieldContainer>
+          <Input
+            type="email"
+            id="email"
+            placeholder="E-mail"
+            autoComplete="off"
+          ></Input>
+          <Submit type="submit">Submit application</Submit>
+        </Form>
+      </FieldContainer>
+    </>
   );
 };
 

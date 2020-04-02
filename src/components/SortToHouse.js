@@ -92,7 +92,7 @@ const SortButton = styled.button`
   }
 `;
 
-const Quote = styled.p`
+const Quote = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
   margin: 5px auto;
   padding: 1rem 3rem;
